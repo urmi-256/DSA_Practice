@@ -1,7 +1,7 @@
 class Solution {
 public:
     void setZeroes(vector<vector<int>>& matrix) {
-        // using row and col set extra 2 vector arrays optimal approach
+        // using row and col set without using 2 extra  vector arrays optimal approach
         int m=matrix.size();
         int n=matrix[m-1].size();
        
@@ -44,7 +44,7 @@ public:
         
        
        
-        // TC - O(m*n + m*n) SC- O(m+n);
+        // TC - O(m*n + m*n) SC- O(1);
         
        
 };
