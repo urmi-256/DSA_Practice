@@ -16,16 +16,27 @@ public:
       }
       return false;  
     }
+
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
-      // one approach - O(m * log m);
-      int m = matrix.size();  
-      int n = matrix[0].size();
-      for(int i=0;i<m;i++){
-         if(matrix[i][0] <= target&& matrix[i][n-1]>=target){
-            return binarySearch(target,matrix,i);
-         }
-      }
-      return false;
+        int m = matrix.size();
+        int n = matrix[0].size();
+        int l = 0, h = m-1;
+        while(l<=h){
+            int mid = (l+h)/2;
+            if(matrix[mid][n-1]<target){
+                l = mid+1;
+            }
+            else if(matrix[mid][n-1] == target){
+                return true;
+            }
+            else{
+                h = mid-1;
+            }
+        }
+        if(l>=0 && l<m){ // remember l can go -1 as if [1] and find target = 2
+        return binarySearch(target,matrix,l);
+        }
+        else return false;
+        
     }
-   //TC - O(m + logn) SC- (O(1));  as we are doing binary search only for one row
 };
