@@ -27,5 +27,5 @@ public:
       }
       return false;
     }
-    //TC - O(mlogn) SC- (O(1));
+   //TC - O(m + logn) SC- (O(1));  as we are doing binary search only for one row
 };
