@@ -29,5 +29,5 @@ public:
     return dp[0][0];
     }
     // TC - O(m*n) SC - (On*m)
-    // dp- memoisation
+    // dp- tabulation
 };
