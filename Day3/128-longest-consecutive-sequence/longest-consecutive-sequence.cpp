@@ -29,6 +29,7 @@ public:
        int pastElement = nums[0];
        int count = 1;
        while(j<nums.size()){
+        // had to add this as for case [0,1,1,2] it will print 2 as the maxlen when it should be 3
         if(nums[j] == pastElement){
             j++; continue;
         }
